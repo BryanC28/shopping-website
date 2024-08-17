@@ -68,11 +68,11 @@ header .logo {
     color: #5aef73;
 }
 
-.header_info .card {
+.header_info .cart {
     position: relative;
 }
 
-.header_info .card .card-item {
+.header_info .cart .cart-item {
     position: absolute;
     right: 6px;
     top: 8px;

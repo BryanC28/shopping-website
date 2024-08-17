@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail page</title>
+    <title>Checkout</title>
 
     <!-- font google -->
     <link
@@ -16,10 +16,12 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- page css -->
+    <!-- Main css -->
     <link rel="stylesheet" href="/css/style.css">
-    <!-- details css -->
-    <link rel="stylesheet" href="/css/detail.css">
+
+    <!-- cart Css -->
+    <link rel="stylesheet" href="/css/checkout.css">
+
 </head>
 
 <body>
@@ -44,44 +46,23 @@
                 <p class="cart-item">0</p>
                 <i class="fa fa-shopping-bag"></i>
             </a>
-            <a class="header_account" href="#">
+            <a class="header_account" href="/pages/authenticate/login-signup.html">
                 <i class="fa fa-user-alt"></i>
                 <p id="acountname">Login</p>
             </a>
+            <i class="fa fa-sign-out-alt" onclick="logout()"></i>
         </div>
 
     </header>
 
-    <!-- CONTENT -->
-    <div class="detail-container">
-        <div class="detail">
-            <div class="detail-image">
-                <img src="/assets/image/zoom-mercurial.jpg" alt="zoom-mercurial">
-            </div>
-            <div class="detail-info">
-                <h2>Nike Zoom mercurial</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla illo inventore rem! Dolor, minima.
-                    Atque excepturi vel inventore corporis quis sunt veritatis sit modi adipisci quas ab numquam,
-                    dolores ad.</p>
-                <div class="detail-price">
-                    <span class="price">2.500.000 VND</span>
-                </div>
-            </div>
+    <!-- Content -->
+     <div class="order-confirm">
+        <h1>Your order has been successful</h1>
+        <a href="/index.html" class="btn">Continuous to shopping</a>
+     </div>
 
-        </div>
-    </div>
-    <button class="btn-add" id="add-to-cart">Add to card</button>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="copyright">
-            <p>Copyright &copy; 2024 All rights reseerver. | This template is made with by <a
-                    href="https://www.facebook.com/iamnguyenlecuong/">Nguyen Le Cuong</a> </p>
-        </div>
-    </footer>
 
     <script src="/js/main.js"></script>
-    <script src="/js/detail.js"></script>
 </body>
 
 </html>

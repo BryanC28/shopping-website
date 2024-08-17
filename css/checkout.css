@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.order-confirm {
+    display: flex;
+    flex-direction: column;
+    margin: 200px auto;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid #a7a7c4;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.order-confirm a {
+    padding: 8px 20px;
+    font-size: 20px;
+    background-color: #c96024;
+    text-decoration: none;
+    color: #fff;
+}
+
+.order-confirm a:hover{
+    font-size: 30px;
+    background-color: #e05c0f;
+}

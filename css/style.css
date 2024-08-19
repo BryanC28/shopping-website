@@ -108,8 +108,8 @@ header .logo {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 60px;
+    justify-content: start;
+    gap: 40px;
     flex-wrap: wrap;
     margin: 80px auto;
 }

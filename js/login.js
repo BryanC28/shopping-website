@@ -1,4 +1,6 @@
 // localStorage.clear();
+localStorage.removeItem('userInfo');
+localStorage.removeItem('cart');
 document.querySelectorAll('.info-item .btn').forEach(function
     (button) {
     button.addEventListener('click', function () {
@@ -91,7 +93,8 @@ function login(event) {
     let users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')): {};
     let storeUser = users[username];
 
-    if(storeUser && storeUser.password == password){
+    if(storeUser && storeUser.password === password){
+        localStorage.setItem('userInfo', JSON.stringify(storeUser));
         window.location.href = '/index.html';
     }else{
         loginMessage.innerText = 'Invalid username or password';

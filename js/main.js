@@ -1,6 +1,14 @@
-function logout() {
-    window.location.href = 'pages/authenticate/login-signup.html';
-}
+// function logout() {
+//     localStorage.removeItem('userInfo');
+//     window.location.href = 'pages/authenticate/login-signup.html';
+// }
+window.addEventListener('DOMContentLoaded',()=>{
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    if(userInfo){
+        document.getElementById('acountname').innerHTML = userInfo.fullName;
+        document.querySelector('.header_account i').className = "fa fa-sign-out-alt";
+    }
+})
 
 const products = document.querySelector('.product');
 // const cartIcon = document.querySelector('.cart');

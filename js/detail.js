@@ -31,6 +31,20 @@ const getDetailData = async () => {
     AddToCart.addEventListener('click', ()=>{
         // console.log('add-to-cart');
         const cart = JSON.parse(localStorage.getItem('cart'));
+        const user = JSON.parse(localStorage.getItem('userInfo'));
+        if(!user){
+            // alert('You must to Login to Shopping!!');
+            // window.location.href ='/pages/authenticate/login-signup.html';
+            Swal.fire({
+                icon: "error",
+                title: "Warning....",
+                text: "You must to Login to Shopping!!",
+                showConfirmButton: false,
+                timer: 1000
+            }).then(function(){
+                window.location.href = '/pages/authenticate/login-signup.html';
+            });
+        }
         if(cart){
             const item = cart.findIndex(item => item.id === findProductById.id);
             if(item != -1){
@@ -62,5 +76,6 @@ const setCartItem = () => {
             `
     }
 };
+
 setCartItem();
 getDetailData();

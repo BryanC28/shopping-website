@@ -4,11 +4,15 @@ localStorage.removeItem('cart');
 document.querySelectorAll('.info-item .btn').forEach(function
     (button) {
     button.addEventListener('click', function () {
+        regMessage.innerText = '';
+        loginMessage.innerText = '';
         document.querySelector('.container').classList.toggle('log-in');
     });
 });
 
 function register(event) {
+    // window.location.reload();
+
     event.preventDefault();
     let username = document.getElementById('regUsername').value.trim();
     let password = document.getElementById('regPassword').value.trim();
@@ -20,9 +24,9 @@ function register(event) {
     let upperCaseLetter = /[A-Z]/g;
     let numbers = /[0-9]/g;
 
-    regMessage.style.color = 'white';
+    regMessage.style.color = 'red';
     regMessage.style.fontWeight = "bold";
-    regMessage.style.background = 'red';
+    regMessage.style.background = 'white';
     regMessage.style.width = '100%';
     regMessage.style.textAlign = 'center';
     if (!username || !password || !Email || !fullName) {
@@ -80,23 +84,25 @@ function register(event) {
 }
 
 function login(event) {
+    // window.location.reload();
+
     event.preventDefault();
     let username = document.getElementById('loginUsername').value.trim();
     let password = document.getElementById('loginPassword').value.trim();
     let loginMessage = document.getElementById('loginMessage');
 
-    loginMessage.style.color = 'white';
+    loginMessage.style.color = 'red';
     loginMessage.style.fontWeight = "bold";
-    loginMessage.style.background = 'red';
+    loginMessage.style.background = 'white';
     loginMessage.style.width = '100%';
     loginMessage.style.textAlign = 'center';
-    let users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')): {};
+    let users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : {};
     let storeUser = users[username];
 
-    if(storeUser && storeUser.password === password){
+    if (storeUser && storeUser.password === password) {
         localStorage.setItem('userInfo', JSON.stringify(storeUser));
         window.location.href = '/index.html';
-    }else{
+    } else {
         loginMessage.innerText = 'Invalid username or password';
     }
     // window.location.href = '/index.html';
